@@ -27,9 +27,12 @@ export const createAppTestHarness = () => ({
     return screen.getByText(/Please correct the following log entries/i);
   },
 
-  get successMessage() {
-    // @todo: to be replaced
-    return screen.getByText(/^success$/i);
+  get mostVisitsTitle() {
+    return screen.getByText(/The most visited pages/i);
+  },
+
+  get mostUniqueVisitsTitle() {
+    return screen.getByText(/Pages with most unique visits/i);
   },
 
   fillLogContents(value: string) {

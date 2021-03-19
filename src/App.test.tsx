@@ -25,6 +25,14 @@ describe('App', () => {
       app.submitForm();
     });
 
+    it('should display list of pages with most visits', () => {
+      expect(app.mostVisitsTitle).toBeInTheDocument();
+    });
+
+    it('should display list of pages with most unique visits', () => {
+      expect(app.mostUniqueVisitsTitle).toBeInTheDocument();
+    });
+
     it('should not display error message', () => {
       expect(() => app.errorMessage).toThrowError(
         /^Unable to find an element/i
@@ -40,6 +48,18 @@ describe('App', () => {
 
     it('should display error message', () => {
       expect(app.errorMessage).toBeInTheDocument();
+    });
+
+    it('should not display pages with most visits', () => {
+      expect(() => app.mostVisitsTitle).toThrowError(
+        /^Unable to find an element/i
+      );
+    });
+
+    it('should not display pages with most unique visits', () => {
+      expect(() => app.mostUniqueVisitsTitle).toThrowError(
+        /^Unable to find an element/i
+      );
     });
   });
 });
