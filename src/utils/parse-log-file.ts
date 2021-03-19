@@ -1,13 +1,6 @@
+import { PageVisitsMap, VisitsCount } from '../types';
 import { isValidIdentifier } from './is-valid-identifier';
 import { isValidWebpage } from './is-valid-webpage';
-
-export interface VisitsCount {
-  totalVisits: number;
-  uniqueVisits: number;
-  visitors: Set<string>;
-}
-
-export type PageVisitsMap = Map<string, VisitsCount>;
 
 interface ParseLogFileResult {
   pageVisitsMap: PageVisitsMap;
