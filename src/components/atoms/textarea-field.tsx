@@ -8,6 +8,7 @@ interface TextareaFieldProps
 
 const StyledTextarea = styled.textarea<{ isValid: boolean }>`
   max-width: 100%;
+  min-height: 100px;
   margin-bottom: 20px;
   padding: 10px;
   font-family: var(--font-family);
@@ -31,6 +32,7 @@ const StyledLabel = styled.label<{ isValid: boolean }>`
   display: block;
   margin-bottom: 10px;
   color: ${({ isValid }) => (isValid ? 'var(--black)' : 'var(--error)')};
+  font-weight: 600;
 `;
 
 export const TextareaField: React.FC<TextareaFieldProps> = ({

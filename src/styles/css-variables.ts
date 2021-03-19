@@ -5,6 +5,7 @@ export const cssVariables = css`
     --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
       'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
       'Helvetica Neue', sans-serif;
+    --font-size-s: 12px;
     --font-size-m: 14px;
 
     /* color palette */

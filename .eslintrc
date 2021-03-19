@@ -15,5 +15,13 @@
     // useful for scaffolding
     "@typescript-eslint/no-empty-interface": "off",
     "@typescript-eslint/no-non-null-assertion": "off"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["**/*-harness.tsx"],
+      "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": "off"
+      }
+    }
+  ]
 }
