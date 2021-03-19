@@ -62,7 +62,11 @@ export const VisitCounterForm: React.FC = () => {
   return (
     <section>
       <Description>
-        Fill out the field below and press submit to get started!
+        All set?{' '}
+        <span role="img" aria-label="rocket emoji">
+          🚀
+        </span>{' '}
+        Now fill out the field below and press submit to get started!
       </Description>
       <StyledForm onSubmit={handleSubmit}>
         <TextareaField
@@ -76,7 +80,7 @@ export const VisitCounterForm: React.FC = () => {
         {isInvalid && (
           <FormError isEmpty={!logValue} invalidLines={invalidLogEntries} />
         )}
-        <SubmitButton type="submit">Calculate</SubmitButton>
+        <SubmitButton type="submit">Submit</SubmitButton>
       </StyledForm>
       {submitted && !isInvalid && (
         <>
