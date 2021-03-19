@@ -1,9 +1,4 @@
-import { PageVisitsMap } from './parse-log-file';
-
-export interface PageVisitCount {
-  page: string;
-  visits: number;
-}
+import { PageVisitCount, PageVisitsMap } from '../types';
 
 export const orderByMostVisits = (
   pageVisits: PageVisitsMap

@@ -1,11 +1,10 @@
 import { ChangeEvent, FormEvent, useMemo, useState } from 'react';
 import styled from 'styled-components';
 
+import { PageVisitsMap, PageVisitCount } from '../../types';
 import {
   orderByMostUniqueVisits,
   orderByMostVisits,
-  PageVisitCount,
-  PageVisitsMap,
   parseLogFile,
 } from '../../utils';
 import { Button, TextareaField, FormError } from '../atoms';

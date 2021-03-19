@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { PageVisitCount } from '../../utils';
+
+import { PageVisitCount } from '../../types';
 
 const ListWrapper = styled.div`
   margin-bottom: 20px;
