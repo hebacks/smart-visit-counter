@@ -1,6 +1,7 @@
 # Smart Page Visit Counter
 
-The purpose of this tiny web application is to display the list of most visited pages based on the log file fed into the form.
+The purpose of this tiny web application is to display the list of most visited pages based on the log file fed into the form.<br />
+Clone the app, install deps and run it locally to see it in action.
 
 ## Tech stack & Tools
 
