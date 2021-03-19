@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { WebpageVisitCounterForm } from './components/molecules';
+import { VisitCounterForm } from './components/molecules';
 
 const Wrapper = styled.div`
   padding: 20px;
@@ -52,7 +52,7 @@ export const App: React.FC = () => {
         </CodeBlock>
       </Description>
       <Description></Description>
-      <WebpageVisitCounterForm />
+      <VisitCounterForm />
     </Wrapper>
   );
 };

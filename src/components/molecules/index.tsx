@@ -1,1 +1,2 @@
-export * from './webpage-visit-counter';
+export * from './webpage-view-count';
+export * from './visit-counter-form';
