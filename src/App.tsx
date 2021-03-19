@@ -4,7 +4,7 @@ import { VisitCounterForm } from './components/molecules';
 const Wrapper = styled.div`
   padding: 20px;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto 80px;
 `;
 
 const Heading = styled.h1`
@@ -15,6 +15,10 @@ const Heading = styled.h1`
 
 export const Description = styled.p`
   margin-bottom: 20px;
+`;
+
+const Highlight = styled.span`
+  font-weight: 700;
 `;
 
 const CodeBlock = styled.code`
@@ -31,18 +35,28 @@ const CodeBlock = styled.code`
 export const App: React.FC = () => {
   return (
     <Wrapper>
-      <Heading>Hey there!</Heading>
+      <Heading>
+        Hey there!{' '}
+        <span role="img" aria-label="waving hand emoji">
+          👋
+        </span>
+      </Heading>
       <Description>
-        This is a very simple application that lets you count the total and
-        unique webpage visits based on the log file fed into the form below. The
-        form expects the following format with visitor's id being an IP-like
-        identifier containing up to 12 dot-delimited digits (999.999.999.999).
+        Welcome! This tiny application lets you count the total and unique
+        webpage visits based on the log file fed into the form below.
+      </Description>
+      <Description>
+        <Highlight>Note</Highlight> that the form expects the following format
         <CodeBlock>
           <span>/[page] [visitor's id]</span>
           <span>/[page] [visitor's id]</span>
           <span>/[page] [visitor's id]</span>
         </CodeBlock>
-        An example valid input could look like this:
+        where [visitor's id] is an IP-like identifier that contains up to 12
+        dot-delimited digits (e.g. 999.999.999.999).
+      </Description>
+      <Description>
+        An example valid input:
         <CodeBlock>
           <span>/help_page/1 126.318.035.038</span>
           <span>/contact 184.123.665.067</span>
@@ -51,7 +65,6 @@ export const App: React.FC = () => {
           <span>/help_page/1 929.398.951.889</span>
         </CodeBlock>
       </Description>
-      <Description></Description>
       <VisitCounterForm />
     </Wrapper>
   );

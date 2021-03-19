@@ -7,7 +7,7 @@ export const createAppTestHarness = () => ({
   },
 
   get validLogExample() {
-    return screen.getByText(/An example valid input could look like this/i);
+    return screen.getByText(/An example valid input/i);
   },
 
   get expectedFormatGuidelines() {
@@ -20,7 +20,7 @@ export const createAppTestHarness = () => ({
   },
 
   get submitButton() {
-    return screen.getByText(/^calculate$/i);
+    return screen.getByText(/^Submit$/i);
   },
 
   get errorMessage() {
