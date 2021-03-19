@@ -6,6 +6,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:coverage": "react-scripts test --verbose --watchAll=false --coverage",
     "lint": "eslint --ext .tsx,.ts src --color",
     "lint:fix": "eslint --ext .tsx,.ts src --fix",
     "eject": "react-scripts eject"
@@ -31,7 +32,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint",
-      "pre-push": "npm test"
+      "pre-push": "npm run test:coverage"
     }
   },
   "dependencies": {
