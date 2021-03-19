@@ -1,3 +1,6 @@
+import { isValidIdentifier } from './is-valid-identifier';
+import { isValidWebpage } from './is-valid-webpage';
+
 export interface VisitsCount {
   totalVisits: number;
   uniqueVisits: number;
@@ -6,20 +9,29 @@ export interface VisitsCount {
 
 export type PageVisitsMap = Map<string, VisitsCount>;
 
-export const parseLogFile = (text: string): PageVisitsMap => {
+interface ParseLogFileResult {
+  pageVisitsMap: PageVisitsMap;
+  invalidEntries: string[];
+}
+
+export const parseLogFile = (text: string): ParseLogFileResult => {
   const pageVisitsMap: PageVisitsMap = new Map();
+  const invalidEntries: string[] = [];
 
   const lines = text.split('\n');
 
   lines.forEach((line) => {
-    if (!line.trim()) return;
+    const sanitizedLine = line.trim();
+    if (!sanitizedLine) return;
 
-    const [page, visitorId] = line.trim().split(' ');
+    const [page, visitorId] = sanitizedLine.split(' ');
+
+    if (!isValidWebpage(page) || !isValidIdentifier(visitorId)) {
+      invalidEntries.push(sanitizedLine);
+      return;
+    }
 
     if (!pageVisitsMap.has(page)) {
-      // @todo: add validation
-      if (!visitorId) return;
-
       const initialVisitsCount = {
         totalVisits: 1,
         uniqueVisits: 1,
@@ -42,5 +54,8 @@ export const parseLogFile = (text: string): PageVisitsMap => {
     pageVisitsMap.set(page, updatedVisitsCount);
   });
 
-  return pageVisitsMap;
+  return {
+    pageVisitsMap,
+    invalidEntries,
+  };
 };
